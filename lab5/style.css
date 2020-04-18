@@ -1,0 +1,146 @@
+html {
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    color: black;
+    text-decoration: none;
+}
+.cart-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cart-buttons a{
+    margin: 20px;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: rgb(70, 70, 70)  solid 2px;
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
+    background-color: rgb(82, 82, 82);
+    color: white;
+}
+.cart-buttons a:hover{
+    background-color: rgba(70, 70, 70, 0.87);
+}
+
+#logo {
+    font-size: 32px;
+    padding-left: 50px;
+}
+
+.product-list {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.product-list a{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.product {
+    float: left;
+    width: 33.3%;
+}
+
+img {
+    width: 80%;
+    height: 80%;
+    margin: 20px;
+}
+
+span {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    flex-grow: 2;
+    justify-content: flex-end;
+    align-self: center;
+}
+
+nav a {
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+.add-product {
+    margin-left: auto;   
+    margin-right: auto;
+    margin-top: 15px;
+    width: 50px;
+    height: 50px;
+    background: url('plus.png') center no-repeat;
+    background-size: cover;
+    display: inline-block;
+    opacity: 0.5;
+    align-self: center;
+}
+.product-photo-1{
+    display: inline-block;
+}
+.product-photo-2{
+    display: none;
+}
+.product:hover .product-photo-2{
+    display: inline;
+}
+.product:hover .product-photo-1{
+    display: none;
+}
+.add-product:hover {
+    opacity: 1;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.list {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    border: black solid 2px;
+    width: 33%;
+    height: 350px;
+    overflow: auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    padding-top: 2%;
+    align-items: center;
+    justify-content: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart_element_price,
+.cart_element_name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100px;
+}
