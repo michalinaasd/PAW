@@ -6,10 +6,14 @@ if (!empty($_GET)) {
         window.location.href="cart.php";
         </script>';
     }
-    if(!empty($_GET['buy']) && $_GET['buy']){
+    if(!empty($_GET['buy'])&& $_GET['buy']=='false'){
+        echo '<script>
+        alert(" Nie zakupiłeś przedmiotów, twój koszyk został opróżniony");
+        </script>';
+    }
+    if(!empty($_GET['buy']) && $_GET['buy']=='true'){
         echo '<script>
         alert("Zakupiłeś przedmioty");
-        window.location.href="cart.php";
         </script>';
     }
 }
@@ -37,18 +41,29 @@ if (!empty($_GET)) {
             <div class='row'>
                 <div class='column'>
                     <?php
+                    
                     include 'database.php';
+                    mysqli_report(MYSQLI_REPORT_STRICT);
                     $pdo = Database::connect();
                     session_start();
+                    $_SESSION['alert'] = false;
                     if (!empty($_SESSION['ID'])) {
                         foreach ($_SESSION['ID'] as &$value) {
+                            
                             $sql = 'SELECT * FROM PRODUKTY WHERE ID =?';
                             $q = $pdo->prepare($sql);
                             $q->execute(array($value));
                             $data = $q->fetch(PDO::FETCH_ASSOC);
-                            echo '<div class="cart_element_name">' .
-                                $data['NAZWA'] .
-                                '</div>';
+                            if(!empty($data)){
+                                echo '<div class="cart_element_name">' .
+                                    $data['NAZWA'] .
+                                    '</div>';
+                            }
+                            else{
+
+                                $_SESSION['alert'] = true;
+                            }
+                            
                         }
                         echo '</div> <div class="column">';
                         foreach ($_SESSION['ID'] as &$value) {
@@ -56,13 +71,17 @@ if (!empty($_GET)) {
                             $q = $pdo->prepare($sql);
                             $q->execute(array($value));
                             $data = $q->fetch(PDO::FETCH_ASSOC);
+                            if(!empty($data)){
                             echo '<div class="cart_element_price">' .
                                 $data['CENA'] .
                                 'zł </div>';
+                            }
                         }
                     }
                     echo '</div>';
-
+                    if($_SESSION['alert']){
+                        echo '<script>alert("Ktoś kupił przedmiot"); </script>';
+                    }
                     ?>
                 </div>
             </div>
