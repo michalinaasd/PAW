@@ -1,0 +1,12 @@
+﻿@model IEnumerable<lab8.Models.Song>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    @Html.Partial("_SongsList", Model)
+</p>
