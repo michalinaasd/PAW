@@ -80,3 +80,4 @@ C:\Users\micha\OneDrive\Documents\sem6\PAI\PAW\lab8\lab8\bin\EntityFramework.Sql
 C:\Users\micha\OneDrive\Documents\sem6\PAI\PAW\lab8\lab8\bin\EntityFramework.xml
 C:\Users\micha\OneDrive\Documents\sem6\PAI\PAW\lab8\lab8\bin\EntityFramework.SqlServer.xml
 C:\Users\micha\OneDrive\Documents\sem6\PAI\PAW\lab8\lab8\obj\Debug\lab8.csprojAssemblyReference.cache
+C:\Users\micha\OneDrive\Documents\sem6\PAI\PAW\lab8\lab8\obj\Debug\lab8.csproj.CoreCompileInputs.cache
